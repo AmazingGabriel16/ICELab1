@@ -6,4 +6,4 @@ From useful things to fun and useless items.
 
 ---
 
-lab.gabtobing.com
+https://lab.gabtobing.com
