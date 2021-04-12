@@ -1,30 +1,57 @@
 <!DOCTYPE HTML>
-<HTML>
+<html>
+<head>
+<!-- Access the jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script>
+function fill()
+{
+    var employees = [];
 
-<style>
-@media only screen and (orientation: landscape) {
-	body {
-		background-color: #0fd0dd;
-	}
+	// put getJSON here.	
+    {
+		$.getJSON("employee.json", function(result)
+		{
+			$.each(data.employees, function(i, employee)
+			{
+				var tblRow;
+				
+				tblRow = "<tr>" + "<td>" + employee.index + "</td>";
+				// here add age, rate, name, surname, email, and paid
+				
+				tblRow +=  "</tr>";
+				$(tblRow).appendTo("#employeesTable tbody");
+			});			
+		});
+	});
+
 }
+</script>
 
-@media only screen and (orientation: portrait) {
-	body {
-		background-color: #dd0fd6;
-	}
-}
-</style>
+</head>
 
-<body>
-    
-<header style="width:100%;background-color:red;"><br></header>
+<body onload="fill()">
+<div class="container">
+<main class="table-responsive">
+<table id= "employeesTable" class="table">
+<thead>
 
-<main style="width: 100%">
-    <aside style="float: left; width: 10%;background-color:blue;"><br><br></aside>
-    <section style="float: left; width: 80%;background-color:yellow;"><br><br></section>
-    <aside style="float: left; width: 10%;background-color:green;"><br><br></aside>
+<th>ID</th>
+<th>Age</th>
+<th>Pay Rate</th>
+<th>First Name</th>
+<th>Surname</th>
+<th>Email</th>
+<th>Paid</th>
+
+</thead>
+<tbody>
+</tbody>
+</table>
+
 </main>
+</div> 
+</body>
 
-<footer style="width:100%;background-color:red;clear:left"><br></footer>
-
-</HTML>
+</html>
